@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    restart: always
+    environment:
+      POSTGRES_USER: sj
+      POSTGRES_PASSWORD: sjpass
+      POSTGRES_DB: sjdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
